@@ -1,0 +1,5 @@
+User-agent: * 
+Crawl-Delay: 20
+Disallow: /dropplets/
+Disallow: /plugins/
+Disallow: /templates/

@@ -1,0 +1,290 @@
+/********************************************************************************************
+
+r3_flat v1.0 by Wayne Roddy (Revital Agency)
+Copyright None
+
+
+/* Setup
+*********************************************************************************************/
+
+body {
+	background: #ffffff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-rendering: optimizeLegibility;
+}
+
+svg {display: none;}
+
+
+/* Typography
+*********************************************************************************************/
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+	font-family: "Anaheim", sans-serif;
+}
+
+header h1{font-size: 55px; color: #7dc4db;}		header h2{font-size: 30px; color: #b8c4cc;}
+#feature h3{font-size: 40px; text-align: center; padding: 10px 0 0 0;}
+	#feature h3 a{color: #FFF;}
+
+.post-cell h4{font-size: 30px; padding: 5px 0;}
+	.post-cell h4 a{ color: #79bfd0; }  .post-cell h4 a:hover{ color: #639fb4; }
+
+
+/* Layout
+*********************************************************************************************/
+
+header{
+	width: 100%;
+	background: #f8f6ed;
+	padding: 30px 0;
+	text-align: center;
+}
+
+nav{
+	width: 100%;
+	background: #f8f6ed;
+	padding: 10px 0;
+	border-bottom: 1px solid #eae8e0;
+	color: #aca897;
+	font-size: 16px;
+	font-family: "Anaheim", sans-serif;
+	text-indent: 10px;
+	text-transform: uppercase;
+}
+	nav a{color: #7dc4db;} nav a:hover{color: #639fb4;}
+
+
+#intro{
+	width: 100%;
+	background: #FFF;
+	padding: 80px 0;
+}
+	#intro p{color: #afb7b9; font-size: 16px; line-height: 2em; font-weight: 200; width: 70%; margin: 0 auto; text-align: center; vertical-align: middle;}
+	#intro p a{ color: #7dc4db;}
+	#intro p a:hover{ color: #e9e7de;}
+
+#feature{	
+	width: 100%;
+	padding: 40px 0;
+	background: url('img/noisy-texture-100x100-o5-d10-c-81bdcc-t0.png') top left repeat;
+	border-top: 1px solid #5c94a2; border-bottom: 1px solid #5c94a2;
+}
+	#feature h3 i{width: 45px; height: 35px; display: inline-block; background: url('img/twitter_logo_white.png') 0 0 no-repeat; vertical-align: middle;} 
+
+#avatar{
+	margin: 0 auto; width: 250px; height: 250px; border-radius: 125px; border: 4px solid #FFF; overflow: hidden;
+}
+	#avatar img{max-width: 100%;}
+
+
+#intake{
+	width: 100%;
+	background: #4c5861;
+	padding: 40px 0;
+	border-bottom: 1px solid #404a52;
+}
+
+	#emailIcon{margin: 0 auto; width: 700px; height: 40px;}
+	#emailIcon i{width: 50px; height: 40px; background: #404a52 url('img/envelope.png') center center no-repeat; display: inline-block; float: left;}
+	#form_error{display: inline-block; color: #d0918b; font-size: 14px; padding: 10px; float: left;}
+		#form_error:after {content: ".";visibility: hidden;display: block;height: 0;clear: both;}
+	
+	#emailForm{margin: 0 auto; width: 700px; background: #404a52; display: block;}
+		#emailForm #pad{padding: 10px;}
+		#emailForm #pad:after {content: ".";visibility: hidden;display: block;height: 0;clear: both;}
+	#emailForm #fields{width: 300px; float: left;}
+		#emailForm #fields input[type="text"], #emailForm #fields input[type="email"]{
+			background: #45515a; width: 100%; display: block; padding: 10px 0; text-indent: 6px; color: #FFF; border: none; font-size: 16px; font-weight: 200; letter-spacing: 1px; margin-bottom: 2px;
+		}
+		#emailForm #fields input[type="text"]:hover, #emailForm #fields input[type="email"]:hover,#emailForm #fields input[type="text"]:focus, #emailForm #fields input[type="email"]:focus{
+			background: #52606a;
+		}
+	#emailForm #finish{width: 370px; float: right;}
+		#emailForm #finish textarea{
+			background: #45515a; width: 360px; height: 67px; display: block; padding: 5px; color: #FFF; border: none; font-size: 14px; font-weight: 200; letter-spacing: 1px; margin: 2px 0;
+		}
+			#emailForm #finish textarea:hover, #emailForm #finish textarea:focus{background: #52606a;}
+			
+		#emailForm #finish button{
+			border: none; width: 370px; display: block; padding: 8px 0; text-align: center; color: #31515b; font-size: 18px; font-weight: 200; letter-spacing: 1px; cursor: pointer;
+			background: #5b92a0; 
+			font-family: "Anaheim", sans-serif;
+		}
+		#emailForm #finish button:hover{background: #6baebf;}
+
+		#form-success{display: none;}
+		#form-success p{
+			text-align: center; color: #6baebf; padding: 20px 0; font-size: 18px; font-family: "Anaheim", sans-serif;
+		}
+		
+.validField{background: #90d0b4 !important;}
+.errorField{background: #8c3c3a !important;}
+
+
+
+#most-recent{
+	width: 100%;
+	background: #FFF;
+	padding: 40px 0;
+}
+
+	#most-recent #holder{ margin: 0 auto; width: 70%; }
+		#most-recent #holder:after {content: ".";visibility: hidden;display: block;height: 0;clear: both;}
+	.post-cell{width: 31%; padding: 0 1%; float: left;} 
+	.post-cell .post-date{color: #bbb; font-size: 13px;}
+	.post-cell p{font-size: 16px; color: #777; line-height: 2em; padding: 10px 0;}
+
+
+#view-all{
+	width: 100%;
+	padding: 20px 0;
+}
+
+#view-all a{
+	background: #f8f6ed;
+	border: 1px solid #e1dfd2;
+	display: block;
+	color: #5b92a0;
+	font-family: "Anaheim", sans-serif;
+	font-size: 30px;
+	text-align: center;
+	width: 30%;
+	margin: 0 auto;
+	padding: 8px 0;
+	border-radius: 8px;
+}
+	#view-all a:hover{background: #eeece0;}
+
+/* Blog
+*********************************************************************************************/
+
+article {
+    width: 100%;
+    padding: 30px 0;
+    border-bottom: 1px dotted #ddd;
+}
+
+article.odd{}
+article.even{background: #F7F7F7;}
+
+article .row{margin: 0 auto; width: 70%; overflow: hidden;}
+	article .row:after {content: ".";visibility: hidden;display: block;height: 0;clear: both;}
+
+.one-quarter{float: left; width: 40%; }
+.three-quarters{float: left; width: 60%;}
+
+.thumbnail{width: 200px; height: 200px; overflow: hidden; border-radius: 100px; margin: 0 20px 0 -60px; float: left;}
+	.thumbnail img{max-width: 120%;}
+
+.meta{
+	padding: 5px 0 0 0;
+	color: #8a9597; font-size: 16px; line-height: 2em; font-weight: 200; 
+}
+	.meta ul a{ color: #7dc4dc; }	.meta ul a:hover{ color: #639fb4; }
+	.meta small{ color: #afb7b9; font-size: 13px; }
+
+
+.three-quarters h1, .three-quarters h2{padding-bottom: 10px;}
+.three-quarters h1, .three-quarters h2 a{font-size: 35px; color: #7dc4db;}	
+.three-quarters h1, .three-quarters h2 a:hover{ color: #639fb4; }
+
+.three-quarters ul{padding: 10px;}
+.three-quarters ul li:before{ content: '”'; color: #ccc; font-size: 45px; padding: 0 5px 5px 0; vertical-align: middle; font-weight: 200; }
+.three-quarters ul li{ color: #8a9597; font-size: 18px; line-height: 1.5em; vertical-align: middle;  font-weight: 200;}
+
+ul.actions{ margin: 10px 0; }
+ul.actions li:before{display: none;}
+ul.actions li{display: inline-block; padding-right: 10px;}
+
+
+
+/* Single
+*********************************************************************************************/
+
+article.single{
+	
+}
+
+article.single .one-quarter{float: none; width: 100%; }
+	article.single .one-quarter ul{ float: right; }
+	article.single .one-quarter .thumbnail{width: 100px; height: 100px; overflow: hidden; border-radius: 50px; margin: 0 20px 0 -20px; float: left;}
+	article.single .one-quarter:after {content: ".";visibility: hidden;display: block;height: 0;clear: both;}
+
+article.single .three-quarters{float: none; width: 100%; padding: 20px 0;}
+article.single .three-quarters ul{background: #f7f7f7;}
+	article.single .three-quarters ul.actions{background: none;}
+	
+article.single .three-quarters p{ padding-top: 15px; line-height: 1.5em; color: #515f63; font-weight: 200; font-size: 16px;}
+
+article.single .three-quarters p a{color: #7dc4dc; }	article.single .three-quarters p a:hover{ color: #639fb4; }
+
+/* Buttons
+*********************************************************************************************/
+
+.actions .button{
+	background: #f8f6ed;
+	border: 1px solid #e1dfd2;
+	display: block;
+	color: #5b92a0;
+	font-family: "Anaheim", sans-serif;
+	font-size: 20px;
+	text-align: center;
+	width: 200px;
+	margin: 10px 0;
+	padding: 8px 0;
+	border-radius: 8px;
+}
+	.actions .button:hover{background: #eeece0;}
+
+
+/* Responsiveness
+*********************************************************************************************/
+
+@media (max-width: 1180px){
+	article .row{margin: 0 auto; width: 80%; overflow: hidden;}
+}
+
+
+
+@media (max-width: 1024px){
+	article .row{margin: 0 auto; width: 100%; overflow: hidden;}
+}
+
+
+
+@media (max-width: 900px){
+	article .row{margin: 0 auto; width: 90%; overflow: hidden;}
+
+	.one-quarter{float: left; width: 50%; }
+	.three-quarters{float: left; width: 50%;}
+
+
+}
+
+
+@media (max-width: 900px){
+
+	.one-quarter{float: none; width: 100%; }
+	.one-quarter .thumbnail{width: 100px; height: 100px; border-radius: 50px; margin: 0 20px 0 -20px;}
+	.one-quarter:after {content: ".";visibility: hidden;display: block;height: 10px;clear: both;}
+	.three-quarters{float: none; width: 100%;}
+	
+	
+	/* FRONT */
+	#emailIcon, #emailForm{width: 90%;}
+	#emailForm #finish textarea{padding: 5px 0;}
+	#emailForm #fields, #emailForm #finish, #emailForm #finish button, #emailForm #finish textarea{width: 100%; float: none;}
+	
+	#most-recent #holder{ margin: 0 auto; width: 95%; }
+	.post-cell{width: 100%; padding: 0; float: none;}
+	
+	
+	/* BUTTONS */
+	#view-all a{width: 90%;}
+}
+
+
+
+

@@ -1,0 +1,77 @@
+/* BUTTONS */
+.deleteBtn{border:none; width: 32px; height: 32px; background: url('img/remove-32.png') center center no-repeat; cursor: pointer; display: inline-block;}
+
+
+body{
+	padding-left: 56px;
+	background: #F2f2f2;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#dash{
+	width: auto;
+}
+
+h1{
+	font-family: 'Anaheim', sans-serif;
+	font-size: 24px;
+	font-weight: normal;
+	padding: 10px;
+	margin: 0;
+	width: auto;
+	display: block;
+	
+	background: #86b6da;
+	color: 		#FFF;
+	
+}
+
+h2{
+	color: 	#86b6da;
+	font-size:  18px;
+	display: block;
+	border-bottom: 1px solid #ccc;
+	font-family: 'Anaheim', sans-serif;
+	font-weight: normal;
+	padding: 10px;
+	margin-bottom: 5px;
+}
+
+.dash-row{
+	width: auto;
+	display: block;
+	padding: 10px 0;
+	margin-bottom: 10px;\
+}
+	.dash-row:after{ content: "."; visibility: hidden; display: block; height: 0; clear: both;}
+	
+
+/* GALLERY DISPLAY STYLES */	
+#fileList{width: 49%; float: left;}
+
+#fileList dt{
+	background: #dde4db;
+	color: #444;
+	display: block;
+	cursor: pointer;
+	padding: 5px;
+	font-size: 14px;
+	margin: 5px 0;
+	vertical-align: middle;
+}
+	#fileList dt:hover{background: #c9cfc7;}
+	#fileList dt span{ width: 35px; height: 35px; vertical-align: middle;}
+
+#thumbs{
+ float: right; width: 45%;
+}	
+	#thumbs:after{ content: "."; visibility: hidden; display: block; height: 0; clear: both;}
+	#thumbs .tn{width: 150px; height: 140px; float: left; margin: 0 5px 5px 0; position: relative;}
+	#thumbs .tn button{position: absolute; z-index: 100; top:0; left: 0;} 
+	#thumbs .tn img{max-width: 100%; position: absolute; z-index: 50;}
+	#thumbs h3{ padding: 10px; color: #444; font-size: 18px; font-family: 'Anaheim', sans-serif;}
+	
+#quickDir, #quickUpload{background: #eee; padding: 5px; margin-bottom: 5px;}	
+	
+	
+	
