@@ -42,6 +42,22 @@ header{
 	text-align: center;
 }
 
+menu{
+	width: 100%;
+	background: rgba(50,97,119,0.6);
+	font-size: 16px;
+	font-family: "Anaheim", sans-serif;
+	position: relative;
+	top: 0;
+	z-index: 5000;
+}
+	menu ul{width: 60%; margin: 0 auto;}
+		menu ul:after{content: ".";visibility: hidden;display: block;height: 0;clear: both;}
+	menu ul li{display: inline; width: 25%; float: left;}
+	menu a{color: #ccc; padding: 10px 0; display: block; text-align: center;} 
+	menu a:hover, menu a.active{color: #FFF; background: rgba(50,97,119,0.8);}
+
+
 nav{
 	width: 100%;
 	background: #f8f6ed;
@@ -61,20 +77,22 @@ nav{
 	background: #FFF;
 	padding: 80px 0;
 }
-	#intro p{color: #afb7b9; font-size: 16px; line-height: 2em; font-weight: 200; width: 70%; margin: 0 auto; text-align: center; vertical-align: middle;}
+	#intro p{color: #5b6163; font-size: 16px; line-height: 2em; font-weight: 200; width: 70%; margin: 0 auto; text-align: center; vertical-align: middle;}
 	#intro p a{ color: #7dc4db;}
-	#intro p a:hover{ color: #e9e7de;}
+	#intro p a:hover{ color: #4b869a;}
 
 #feature{	
 	width: 100%;
-	padding: 40px 0;
+	padding: 60px 0;
 	background: url('img/noisy-texture-100x100-o5-d10-c-81bdcc-t0.png') top left repeat;
 	border-top: 1px solid #5c94a2; border-bottom: 1px solid #5c94a2;
+	overflow: hidden;
+	height: 300px; /* lock it so we can move the avatar in/out */
 }
 	#feature h3 i{width: 45px; height: 35px; display: inline-block; background: url('img/twitter_logo_white.png') 0 0 no-repeat; vertical-align: middle;} 
 
 #avatar{
-	margin: 0 auto; width: 250px; height: 250px; border-radius: 125px; border: 4px solid #FFF; overflow: hidden;
+	margin: 0 auto; margin-top: 150px; width: 250px; height: 250px; border-radius: 125px; border: 4px solid #FFF; overflow: hidden;
 }
 	#avatar img{max-width: 100%;}
 
@@ -82,7 +100,7 @@ nav{
 #intake{
 	width: 100%;
 	background: #4c5861;
-	padding: 40px 0;
+	padding: 60px 0;
 	border-bottom: 1px solid #404a52;
 }
 
@@ -239,17 +257,25 @@ article.single .three-quarters p a{color: #7dc4dc; }	article.single .three-quart
 	.actions .button:hover{background: #eeece0;}
 
 
+/* Parallax 
+*********************************************************************************************/
+
+.parallax-container {background-position: center center; position: relative; background-repeat: no-repeat; overflow-y: hidden;}
+.parallax-container .parallax-bg { display: none; max-width: 100%;}
+
 /* Responsiveness
 *********************************************************************************************/
 
 @media (max-width: 1180px){
 	article .row{margin: 0 auto; width: 80%; overflow: hidden;}
+	
 }
 
 
 
 @media (max-width: 1024px){
 	article .row{margin: 0 auto; width: 100%; overflow: hidden;}
+	menu ul{width: 80%;}
 }
 
 

@@ -30,6 +30,14 @@ function settings_format($name, $value) {
 if ($_POST["submit"] == "submit")
 {
     // Get submitted setup values.
+    if (isset($_POST["introbg_toggle"])) {
+        $introbg_toggle = $_POST["introbg_toggle"];
+    }
+    if (isset($_POST["menu_toggle"])) {
+        $menu_toggle = $_POST["menu_toggle"];
+    }
+    
+   
     if (isset($_POST["blog_email"])) {
         $blog_email = $_POST["blog_email"];
     }
@@ -88,6 +96,12 @@ if ($_POST["submit"] == "submit")
 
     // Output submitted setup values.
     $config[] = "<?php";
+    //r3+
+    $config[] = settings_format("menu_toggle", $menu_toggle);
+    $config[] = settings_format("introbg_toggle", $introbg_toggle);
+    $config[] = settings_format("admin_slug", $admin_slug);
+    //r3+
+    
     $config[] = settings_format("blog_email", $blog_email);
     $config[] = settings_format("blog_twitter", $blog_twitter);
     $config[] = settings_format("blog_url", $blog_url);
@@ -96,7 +110,7 @@ if ($_POST["submit"] == "submit")
     $config[] = settings_format("intro_title", $intro_title);
     $config[] = settings_format("intro_text", $intro_text);
     $config[] = "\$password = '".$password."';";
-    $config[] = settings_format("admin_slug", $admin_slug); // r3+
+     
     $config[] = settings_format("header_inject", $header_inject);
     $config[] = settings_format("footer_inject", $footer_inject);
     $config[] = settings_format("template", $template);

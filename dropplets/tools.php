@@ -85,6 +85,36 @@ if( !isset($_SESSION['user']) ) { ?>
         </div>
         
         <form method="POST" action="<?php echo(BLOG_URL); ?>dropplets/save.php">
+            
+            <div class="dp-row">
+                <div class="dp-icon dp-icon-settings"></div>
+                <div class="dp-content">Home Settings</div>                
+                <a class="dp-link dp-toggle collapsed" href="#dp-home-settings"></a>
+                <button class="dp-button dp-button-submit" type="submit" name="submit" value="submit">k</button>
+            </div>
+            
+            <div class="dp-sub-panel" id="dp-home-settings">
+                <div class="dp-row dp-editable">
+                    <div class="dp-icon dp-icon-edit"></div>
+                    
+                    <div class="dp-content">
+                        <b>Show Menu</b>
+                        <select name="menu_toggle"><option value="True">Yes</option><option value="False" <?php if(HOME_MENU == "False"){ echo "selected"; }?> >No</option></select>
+                        
+                    </div>
+                </div>
+                <div class="dp-row dp-editable">
+                    <div class="dp-icon dp-icon-edit"></div>
+                    
+                    <div class="dp-content">
+                        <b>Intro Background</b>
+                        <select name="introbg_toggle"><option value="True">Yes</option><option value="False" <?php if(INTRO_BG == "False"){ echo "selected"; }?> >No</option></select>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
             <div class="dp-row">
                 <div class="dp-icon dp-icon-settings"></div>
                 <div class="dp-content">Blog Settings</div>                
@@ -302,7 +332,7 @@ if( !isset($_SESSION['user']) ) { ?>
         
         $(".dp-close").click(function(){
             var myelement = $(this).attr("href")
-            $(myelement).animate({left:"-300px"}, 200);
+            $(myelement).animate({left:"-500px"}, 200);
             $.cookies.set('dp-panel', 'closed');
             $("body").css({ overflowY: 'auto' });
             return false;

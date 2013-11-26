@@ -33,7 +33,10 @@ define('INTRO_TEXT', $intro_text);
 define('HEADER_INJECT', stripslashes($header_inject));
 define('FOOTER_INJECT', stripslashes($footer_inject));
 define('ACTIVE_TEMPLATE', $template);
+
 define('ADMIN_SLUG', $admin_slug); //r3+
+define('INTRO_BG', $introbg_toggle); //r3+
+define('HOME_MENU', $menu_toggle); //r3+
 
 /*-----------------------------------------------------------------------------------*/
 /* Definitions (These Should Be Moved to "Settings")

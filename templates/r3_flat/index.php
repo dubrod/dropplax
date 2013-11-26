@@ -20,12 +20,11 @@
         	<link rel="stylesheet" href="<?php echo BLOG_URL; ?>dropplets/style/style.css">
         <?php } else { ?>
         	<link rel="stylesheet" href="<?php echo($template_dir_url); ?>style.css">
+			<script src="<?php echo($template_dir_url); ?>js/smooth-scroll.min.js"></script>
         	<script src="<?php echo($template_dir_url); ?>js/form-validation.js"></script>
-        	<script>
-        	$(document).ready(function() {
-	        	$("#intakeButton").click(function(){ var fields = new Array("fullname", "phone", "email"); validateForm(fields) });
-	        });	
-        	</script>
+        	<?php if($introbg_toggle == "True"){ echo '<script src="'.$template_dir_url.'js/parallax-bg.js"></script>'; } ?>
+        	<script src="<?php echo($template_dir_url); ?>js/main.js"></script>
+        	
         <?php } ?>
         
         <!-- RSS Feed Links -->
@@ -44,6 +43,17 @@
 		}
 		?>
 		
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-45766253-1', 'dropplax.com');
+		  ga('send', 'pageview');
+		
+		</script>
+		
         <?php get_header(); ?>
        
     </head>
@@ -61,7 +71,21 @@
             <h1><?php echo($blog_title); ?></h1>
             <h2><?php echo($intro_title); ?></h2>    
         </header>
-        <div id="intro"><p><?php echo($intro_text); ?></p></div>
+        <?php 
+        if($menu_toggle == "True"){ ?>
+        <menu>
+        	<ul>
+        		<li><a href="#intro">About</a><li>
+        		<li><a href="#feature">Profile</a><li>
+        		<li><a href="#intake">Contact</a><li>
+        		<li><a href="#most-recent">Blog</a><li>
+        	</ul>
+        </menu>
+        <?php } ?>
+        <div id="intro" <?php if($introbg_toggle == "True"){ echo 'class="parallax-container"'; } ?> >
+        	<?php if($introbg_toggle == "True"){ echo '<img src="galleries/intro/photos/parallax-bg.jpg" class="parallax-bg" alt="">'; } ?>
+        	<?php echo($intro_text); ?>
+        </div>
         <div id="feature">
         	<div id="avatar"><img src="<?php echo($template_dir_url); ?>img/avatar.jpg" alt="" /></div>
         	<h3><i></i><a href="https://twitter.com/<?php echo($blog_twitter);?>" target="_blank"><?php echo($blog_twitter);?></a></h3>

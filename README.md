@@ -49,6 +49,11 @@ Some templates include the ability to add a post image or thumbnail along with y
 
 Post file names are used to structure post permalinks on your blog. So, a post file saved as **my-first-blog-post.md** will result in **yoursite.com/my-first-blog-post** as the post permalink.
 
+## Home Settings ( New in version 2)
+You can toggle (on/off) the menu bar.
+You can upload a photo to the "intro" /photos gallery named "parallax-bg.jpg" and toggle it on/off
+
+
 ## Publishing Posts
 After you've finished writing your post offline, you can then publish your post using the Dropplets toolbar:
 
