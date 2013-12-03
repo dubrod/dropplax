@@ -26,8 +26,13 @@ Dropplets is compatible with most server configurations and can be typically ins
 3. Pull up your site in any modern web browser (e.g. if you uploaded Dropplets to **yoursite.com**, load **yoursite.com** in your browser to finish the installation) 
 4. Insert the slug for your admin window to appear, going to **yoursite.com?admin=THIS_SLUG** will show the droplets admin icon
 5. Create and Confirm your password.
+<<<<<<< HEAD
 6. **.htaccess** - Enter your domain after RewriteEngine on
 
+=======
+6. **.htaccess** - There have been some issues with “www.” not working. Add this after RewriteEngine on
+ 
+>>>>>>> 1b80f5bcb1c1feb0e99ada10e1dd5818c359c7e2
     RewriteCond %{HTTP_HOST} !^domain\.com
 
     RewriteRule (.*) http://domain/$1 [R=301,L]
