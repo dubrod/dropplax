@@ -15,9 +15,7 @@ if( !isset($_SESSION['user']) ) { ?>
 <div class="dp-panel-wrapper <?php if($_COOKIE['dp-panel']) { echo($_COOKIE['dp-panel']); } ?>" id="dp-dropplets">
     <div class="dp-panel">
         <div class="dp-row profile">
-            <div class="dp-icon">
-                <img src="<?php echo get_twitter_profile_img(BLOG_TWITTER); ?>" alt="<?php echo(BLOG_TITLE); ?>" />
-            </div>
+            <div class="dp-icon dp-icon-profile dp-icon-large"></div>
             
             <div class="dp-content">
                 <span class="title">Hey There!</span>

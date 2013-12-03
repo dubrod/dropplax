@@ -1,0 +1,18 @@
+# Pretty Permalinks
+RewriteRule ^(images)($|/) - [L]
+RewriteCond %{REQUEST_URI} !^action=logout [NC]
+RewriteCond %{REQUEST_URI} !^action=login [NC]
+Options +FollowSymLinks +MultiViews
+RewriteEngine on
+RewriteBase /
+RewriteCond %{HTTP_HOST} !^domain\.com
+RewriteRule (.*) http://domain.com/$1 [R=301,L]
+#get rid of index.php
+RewriteCond %{REQUEST_URI} !index\.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?filename=$1 [NC,QSA,L]
+
+<Files config.php> 
+order Allow,Deny 
+Deny from all
+</Files>

@@ -1,10 +1,10 @@
 <?php
 
 session_start();
+if(isset($_SESSION['user'])){
 
 // File locations.
 $settings_file = "../config.php";
-$htaccess_file = "../.htaccess";
 $phpass_file   = '../dropplets/includes/phpass.php';
 
 // Get existing settings.
@@ -117,28 +117,12 @@ if ($_POST["submit"] == "submit")
     
     // Create the settings file.
     file_put_contents($settings_file, implode("\n", $config));
+  	chmod($settings_file, 0600);  
+    //writing a .htaccess file is very bad idea
     
-    // Generate the .htaccess file on initial setup only.
-    if (!file_exists($htaccess_file)) {
-    
-        // Parameters for the htaccess file.
-        $htaccess[] = "# Pretty Permalinks";
-        $htaccess[] = "RewriteRule ^(images)($|/) - [L]";
-        $htaccess[] = "RewriteCond %{REQUEST_URI} !^action=logout [NC]";
-        $htaccess[] = "RewriteCond %{REQUEST_URI} !^action=login [NC]";
-        $htaccess[] = "Options +FollowSymLinks -MultiViews";
-        $htaccess[] = "RewriteEngine on";
-        $htaccess[] = "RewriteBase " . $dir;
-        $htaccess[] = "RewriteCond %{REQUEST_URI} !index\.php";
-        $htaccess[] = "RewriteCond %{REQUEST_FILENAME} !-f";
-        $htaccess[] = "RewriteRule ^(.*)$ index.php?filename=$1 [NC,QSA,L]";
-    
-        // Generate the .htaccess file.
-        file_put_contents($htaccess_file, implode("\n", $htaccess));
-    }
-
     // Redirect
     header("Location: " . $blog_url."?admin=".$admin_slug);
 } 
 
+} // eof if session 
 ?>
