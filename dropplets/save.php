@@ -1,7 +1,8 @@
 <?php
 
 session_start();
-if(isset($_SESSION['user'])){
+// uncomment line 5 and line 128 after install for better security
+//if(isset($_SESSION['user'])){
 
 // File locations.
 $settings_file = "../config.php";
@@ -124,5 +125,5 @@ if ($_POST["submit"] == "submit")
     header("Location: " . $blog_url."?admin=".$admin_slug);
 } 
 
-} // eof if session 
+//} // eof if session 
 ?>
