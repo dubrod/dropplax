@@ -117,8 +117,11 @@ if (isset($_POST['liteUploader_id']) && $_POST['liteUploader_id'] == 'postfiles'
 				$intro_p = str_replace("<li>", "", $intro_p);
 				$intro_p = str_replace("</li>", "", $intro_p);
 				
-		    $cell = "<div class=\"post-cell\"><h4><a href=\"$post_link\">".$post["post_title"]."</a></h4><div class=\"post-date\">".$post["post_date"]."</div><p>$intro_p</p></div>";
-		    
+		    		$intro_t = str_replace("<h1>", "", $post["post_title"]);
+				$intro_t = str_replace("</h1>", "", $intro_t);
+				
+		    $cell = "<div class=\"post-cell\"><h4><a href=\"$post_link\">$intro_t</a></h4><div class=\"post-date\">".$post["post_date"]."</div><p>$intro_p</p></div>";
+
 		    fwrite($cache_posts, $cell);
 		       
 	        $i++;
