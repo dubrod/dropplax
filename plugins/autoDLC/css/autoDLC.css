@@ -1,7 +1,7 @@
 #autoDLC:after {content: ".";visibility: hidden;display: block;height: 0;clear: both;}
 
 #autoDLC .tn {
-  width: 24.9%;
+  width: 20%;
   height: 150px;
   float: left;
   margin: 15px 0;
@@ -10,24 +10,19 @@
   text-align: center;
 }
 
-@media (max-width: 720px) {
-  #autoDLC .tn {
-    width: 49.9%;
-  }
-}
-@media (max-width: 300px) {
-  #autoDLC .tn {
-    width: 99.9%;
-  }
-}
+@media(max-width: 1200px){ #autoDLC .tn {width: 24.9%;} }
+@media(max-width: 720px){ #autoDLC .tn {width: 49.9%;} }
+@media(max-width: 300px){ #autoDLC .tn {width: 99.9%;} }
+			
 #autoDLC .tn .img {
   position: absolute;
   top: 0;
   left: 50%;
-  margin-left: -75px;
+  margin-left: -60px;
   z-index: 50;
   width: 150px;
   height: 150px;
+  overflow: hidden;
   text-align: center;
 }
 #autoDLC .tn .img img {
@@ -37,12 +32,12 @@
   position: absolute;
   top: 0;
   left: 50%;
-  margin-left: -35px;
+  margin-left: -60px;
   z-index: 100;
   width: 150px;
   text-align: center;
   cursor: pointer;
-  margin-top: -75px;
+  margin-top: -85px;
   opacity: .85;
   background: none;
   border: none;
@@ -50,18 +45,7 @@
   -moz-transition: all 0.6s;
   transition: all 0.6s;
 }
-	@media (max-width: 1580px) {
-		#autoDLC .tn button { margin-left: -45px; }
-	}
-	@media (max-width: 1450px) {
-		#autoDLC .tn button { margin-left: -55px; }
-	}
-	@media (max-width: 1160px) {
-		#autoDLC .tn button { margin-left: -75px; }
-	}
-	@media (max-width: 720px) {
-		#autoDLC .tn button { margin-left: -70px; }
-	}
+			
 
 #autoDLC .tn:hover > button {
   margin-top: 40px;
@@ -101,7 +85,7 @@
   }
 }
 #galleryWindow #imageContainer {
-  margin-top: 70px;
+  margin-top: 50px;
 }
 #galleryWindow #imageContainer button {
   padding-top: 200px;
@@ -173,9 +157,6 @@
   width: 70%;
   margin: 0 auto;
   height: auto;
-  border: 5px solid #FFF;
-  border-radius: 10px;
-  box-shadow: 1px 1px 9px 11px #222;
 }
 @media (max-width: 900px) {
   #galleryWindow #imageContainer #imageWindow {
